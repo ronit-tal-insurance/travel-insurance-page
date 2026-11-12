@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src https://docs.google.com; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'">
+  <title>ביטוח נסיעות | רונית וטל סוכנות לביטוח</title>
+  <meta name="description" content="משאירים פרטים לביטוח נסיעות לחו&quot;ל, ורונית וטל חוזרות אליכם. בלי התחייבות.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <img class="logo" src="logo.png" alt="רונית וטל סוכנות לביטוח - שומרים על החלומות שלך" width="720" height="526">
+    <svg class="clouds" viewBox="0 0 400 60" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <ellipse cx="60" cy="20" rx="34" ry="11" fill="#ffffff" opacity=".7"/>
+      <ellipse cx="86" cy="25" rx="26" ry="9" fill="#ffffff" opacity=".7"/>
+      <ellipse cx="330" cy="14" rx="30" ry="10" fill="#ffffff" opacity=".6"/>
+      <ellipse cx="352" cy="19" rx="22" ry="8" fill="#ffffff" opacity=".6"/>
+      <path fill="#fbf6ee" d="M0 60V40c20 0 20-14 40-14s20 14 40 14 20-14 40-14 20 14 40 14 20-14 40-14 20 14 40 14 20-14 40-14 20 14 40 14 20-14 40-14 20 14 40 14V60z"/>
+    </svg>
+  </header>
+
+  <main>
+    <section id="form-screen">
+      <h1>לאן טסים?</h1>
+      <p class="lead">מתכננים לטוס? נסגור לכם ביטוח נסיעות מסודר, כדי שתיסעו רגועים. משאירים פרטים ואנחנו חוזרים אליכם, בלי התחייבות.</p>
+
+      <form id="lead-form" novalidate autocomplete="on">
+        <div class="field">
+          <label for="dest">יעד</label>
+          <div class="combo" id="combo">
+            <div class="combo-box" id="combo-box">
+              <ul class="pills" id="pills" aria-label="המדינות שנבחרו"></ul>
+              <input id="dest" type="text" role="combobox" aria-expanded="false" aria-controls="dest-list" aria-autocomplete="list" aria-describedby="err-dest" autocomplete="off" placeholder="בחרו מדינה, אפשר יותר מאחת">
+            </div>
+            <ul id="dest-list" class="options" role="listbox" aria-multiselectable="true" aria-label="מדינות" hidden></ul>
+          </div>
+          <p class="err" id="err-dest" role="alert"></p>
+        </div>
+
+        <div class="row2">
+          <div class="field">
+            <label for="depart">יוצאים ב-</label>
+            <input id="depart" name="depart" type="date" aria-describedby="err-depart">
+            <p class="err" id="err-depart" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="ret">חוזרים ב-</label>
+            <input id="ret" name="ret" type="date" aria-describedby="err-ret">
+            <p class="err" id="err-ret" role="alert"></p>
+          </div>
+        </div>
+
+        <div class="field">
+          <span class="label" id="pax-label">כמה נוסעים</span>
+          <div class="stepper" role="group" aria-labelledby="pax-label">
+            <button type="button" id="pax-minus" class="step" aria-label="פחות נוסעים">&minus;</button>
+            <output id="pax-out" aria-live="polite">2 נוסעים</output>
+            <button type="button" id="pax-plus" class="step" aria-label="עוד נוסעים">+</button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="name">שם מלא</label>
+          <input id="name" name="name" type="text" autocomplete="name" maxlength="80" aria-describedby="err-name">
+          <p class="err" id="err-name" role="alert"></p>
+        </div>
+
+        <div class="field">
+          <label for="phone">נייד</label>
+          <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" dir="ltr" class="ltr-input" aria-describedby="err-phone">
+          <p class="err" id="err-phone" role="alert"></p>
+        </div>
+
+        <div class="field">
+          <label for="email">מייל</label>
+          <input id="email" name="email" type="email" inputmode="email" autocomplete="email" maxlength="120" dir="ltr" class="ltr-input" aria-describedby="err-email">
+          <p class="err" id="err-email" role="alert"></p>
+        </div>
+
+        <div class="field">
+          <label for="note">משהו שחשוב שנדע? <span class="optional">(לא חובה)</span></label>
+          <textarea id="note" name="note" rows="3" maxlength="300" placeholder="ילדים, גיל מבוגר, ספורט אתגרי..." aria-describedby="note-hint"></textarea>
+          <p class="hint" id="note-hint">בלי פרטי בריאות או מספרי זהות, נשלים אותם בשיחה.</p>
+        </div>
+
+        <div class="trap" aria-hidden="true">
+          <label for="website">אל תמלאו שדה זה</label>
+          <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="field consent">
+          <label class="check" for="consent">
+            <input id="consent" name="consent" type="checkbox" aria-describedby="err-consent">
+            <span>אני מאשר/ת שיחזרו אליי בנוגע לביטוח נסיעות</span>
+          </label>
+          <p class="err" id="err-consent" role="alert"></p>
+        </div>
+
+        <p class="err form-err" id="err-form" role="alert"></p>
+        <button type="submit" id="submit" class="cta">בואו נסדר לי ביטוח נסיעות</button>
+        <p class="trust">חזרה אישית מטל או מרונית. בלי ספאם.</p>
+      </form>
+    </section>
+
+    <section id="thanks-screen" class="thanks" hidden tabindex="-1">
+      <div class="tick" aria-hidden="true">
+        <svg viewBox="0 0 48 48" width="56" height="56" focusable="false"><circle cx="24" cy="24" r="22" fill="#ffffff"/><path d="M14 25l7 7 13-15" fill="none" stroke="#21435a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h2>תודה, קיבלנו</h2>
+      <p id="thanks-line">נחזור אליכם בקרוב לסגור ביטוח נסיעות. נסיעה טובה מראש ✈️</p>
+    </section>
+  </main>
+
+  <footer>
+    <a href="privacy.html">מדיניות פרטיות</a>
+  </footer>
+
+  <script src="countries.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

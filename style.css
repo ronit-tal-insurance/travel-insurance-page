@@ -204,6 +204,8 @@ input:focus-visible, textarea:focus-visible, button:focus-visible, a:focus-visib
 .cta:disabled { opacity: .7; cursor: default; }
 .trust { text-align: center; color: var(--ink-2); font-size: 15px; margin: 12px 0 0; }
 .form-err { margin-bottom: 12px; }
+.direct { text-align: center; color: var(--ink-2); font-size: 15px; line-height: 1.5; margin: 24px 0 0; padding-top: 18px; border-top: 1px solid rgba(33,67,90,.15); }
+.direct a { color: var(--navy); font-weight: 600; }
 
 /* מלכודת לרובוטים: מחוץ למסך, לא display:none (רובוטים מזהים) */
 .trap { position: absolute; inset-inline-start: -9999px; width: 1px; height: 1px; overflow: hidden; }

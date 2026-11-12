@@ -1,3 +1,20 @@
+@font-face {
+  font-family: "Heebo";
+  src: url("fonts/heebo-hebrew.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+}
+@font-face {
+  font-family: "Heebo";
+  src: url("fonts/heebo-latin.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 :root {
   --cream: #fbf6ee;
   --sky: #dcebf3;
@@ -39,12 +56,14 @@ body {
 main { max-width: 440px; margin: 0 auto; padding: 4px 16px 8px; }
 
 h1 {
-  font-size: 30px;
-  font-weight: 500;
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 1.15;
+  text-align: center;
   color: var(--navy);
-  margin: 12px 0 6px;
+  margin: 18px 0 10px;
 }
-.lead { margin: 0 0 22px; color: var(--ink-2); }
+.lead { margin: 0 0 24px; color: var(--ink-2); text-align: center; }
 
 .field { margin-bottom: 18px; }
 .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
@@ -204,8 +223,28 @@ input:focus-visible, textarea:focus-visible, button:focus-visible, a:focus-visib
 .cta:disabled { opacity: .7; cursor: default; }
 .trust { text-align: center; color: var(--ink-2); font-size: 15px; margin: 12px 0 0; }
 .form-err { margin-bottom: 12px; }
-.direct { text-align: center; color: var(--ink-2); font-size: 15px; line-height: 1.5; margin: 24px 0 0; padding-top: 18px; border-top: 1px solid rgba(33,67,90,.15); }
-.direct a { color: var(--navy); font-weight: 600; }
+.direct {
+  text-align: center;
+  margin: 28px 0 0;
+  padding: 20px 18px;
+  background: var(--peach);
+  border-radius: 18px;
+}
+.direct-title { margin: 0 0 12px; font-size: 20px; font-weight: 700; color: var(--peach-text); }
+.buy {
+  display: block;
+  padding: 14px 16px;
+  min-height: 52px;
+  background: #fff;
+  color: var(--navy);
+  border: 2px solid var(--navy);
+  border-radius: 14px;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.buy:hover { background: var(--navy); color: #fff; }
+.direct-note { margin: 12px 0 0; font-size: 16px; color: var(--peach-text); }
 
 /* מלכודת לרובוטים: מחוץ למסך, לא display:none (רובוטים מזהים) */
 .trap { position: absolute; inset-inline-start: -9999px; width: 1px; height: 1px; overflow: hidden; }
